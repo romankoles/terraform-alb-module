@@ -43,12 +43,12 @@ module "my-alb" {
   ECS_SG             = module.my-ecs.cluster_sg
 }
 
-module "my-alb-rule" {
-  source           = "github.com/romankoles/terraform-modules//modules/alb-rule?ref=terraform-0.12"
-  LISTENER_ARN     = module.my-alb.http_listener_arn
-  PRIORITY         = 100
-  TARGET_GROUP_ARN = module.my-service.target_group_arn
-  CONDITION_FIELD  = "host-header"
-  CONDITION_VALUES = ["subdomain.ecs.aibroonie.com"]
+#module "my-alb-rule" {
+#  source           = "github.com/romankoles/terraform-modules//modules/alb-rule?ref=terraform-0.12"
+#  LISTENER_ARN     = module.my-alb.http_listener_arn
+#  PRIORITY         = 100
+#  TARGET_GROUP_ARN = module.my-service.target_group_arn
+#  CONDITION_FIELD  = "host-header"
+#  CONDITION_VALUES = ["subdomain.ecs.aibroonie.com"]
 }
 
